@@ -31,6 +31,7 @@ class Vector(Array):
         return representation
 
     def _valid_vector_shape(self) -> bool:
+        """Checks whether a vector has a valid shape"""
         if len(self.shape) != 1:
             result = False
         else:
