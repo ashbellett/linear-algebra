@@ -23,6 +23,13 @@ class Matrix(Array):
         if not self._valid_matrix_shape():
             raise ValueError("Data is not a matrix")
 
+    def __repr__(self) -> str:
+        if len(str(self.data)) < 64:
+            representation = f"Matrix {self.data} of shape {self.shape}"
+        else:
+            representation = f"Matrix of shape {self.shape}"
+        return representation
+
     def _valid_matrix_shape(self) -> bool:
         if len(self.shape) != 2:
             result = False

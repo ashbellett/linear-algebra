@@ -23,6 +23,13 @@ class Vector(Array):
         if not self._valid_vector_shape():
             raise ValueError("Data is not a vector")
 
+    def __repr__(self) -> str:
+        if len(str(self.data)) < 64:
+            representation = f"Vector {self.data} of shape {self.shape}"
+        else:
+            representation = f"Vector of shape {self.shape}"
+        return representation
+
     def _valid_vector_shape(self) -> bool:
         if len(self.shape) != 1:
             result = False
