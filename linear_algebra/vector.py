@@ -2,7 +2,7 @@
 A vector data structure.
 Example:
     $ from linear_algebra.vector import Vector
-    $ vector = Vector([[1,2],[3,4]])
+    $ vector = Vector([1,2,3])
 """
 
 from __future__ import annotations
