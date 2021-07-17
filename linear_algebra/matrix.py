@@ -31,7 +31,7 @@ class Matrix(Array):
         return representation
 
     def _valid_matrix_shape(self) -> bool:
-        """Checks whether a matrix has a valid shape"""
+        """Check whether a matrix has a valid shape"""
         if len(self.shape) != 2:
             valid = False
         else:
@@ -39,7 +39,7 @@ class Matrix(Array):
         return valid
 
     def is_square(self) -> bool:
-        """Checks whether a matrix' shape is square"""
+        """Check whether a matrix shape is square"""
         if self.shape[0] == self.shape[1]:
             result = True
         else:
@@ -47,12 +47,12 @@ class Matrix(Array):
         return result
 
     def determinant(self) -> float:
-        """Calculates the determinant of a matrix"""
+        """Calculate the determinant of a matrix"""
         result = self._determinant(self.data)
         return result
 
     def _determinant(self, matrix: MatrixType) -> float:
-        """Performs Laplace expansion to calculate the matrix determinant"""
+        """Perform Laplace expansion to calculate the matrix determinant"""
         if not self.is_square():
             raise ValueError("Matrix is not square")
         if len(matrix) == 1:
@@ -63,3 +63,8 @@ class Matrix(Array):
             sign = 1 if column % 2 == 0 else -1
             determinant += sign * element * self._determinant(minor)
         return determinant
+
+    def transpose(self) -> MatrixType:
+        """Calculate the transpose of a matrix"""
+        transpose = [list(row) for row in zip(*self.data)]
+        return Matrix(transpose)

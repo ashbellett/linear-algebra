@@ -50,11 +50,18 @@ matrix.determinant()
 # -2
 ```
 
+`transpose()`: Returns the matrix transpose
+```python
+matrix.transpose()
+# Matrix [[1, 3], [2, 4]] of shape (2, 2)
+```
+
 ### Vector
 
 Vector data structure; inherited from `Array` class
 ```python
 from linear_algebra.vector import Vector
+
 vector = Vector([1,2,3])
 vector
 # Vector [1, 2, 3] of shape (3,)
