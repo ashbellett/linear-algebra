@@ -8,6 +8,8 @@ Implementations of linear algebra algorithms
 
 Generic array data structure used as base class for matrix and vector classes
 ```python
+from linear_algebra.array import Array
+
 array = Array([[[1,2],[3,4]],[[5,6],[7,8]]])
 array
 # Array [[[1, 2], [3, 4]], [[5, 6], [7, 8]]] of shape (2, 2, 2)
@@ -29,6 +31,8 @@ array.shape
 
 Matrix data structure; inherited from `Array` class
 ```python
+from linear_algebra.matrix import Matrix
+
 matrix = Matrix([[1,2],[3,4]])
 matrix
 # Matrix [[1, 2], [3, 4]] of shape (2, 2)
@@ -50,6 +54,7 @@ matrix.determinant()
 
 Vector data structure; inherited from `Array` class
 ```python
+from linear_algebra.vector import Vector
 vector = Vector([1,2,3])
 vector
 # Vector [1, 2, 3] of shape (3,)
