@@ -49,6 +49,11 @@ matrix.determinant()
 ### Vector
 
 Vector data structure; inherited from `Array` class
+```python
+vector = Vector([1,2,3])
+vector
+# Vector [1, 2, 3] of shape (3,)
+```
 
 ## Backlog
 
