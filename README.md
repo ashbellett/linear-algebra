@@ -7,48 +7,48 @@ Implementations of linear algebra algorithms
 ### Array
 
 Generic array data structure used as base class for matrix and vector classes
-```
+```python
 array = Array([[[1,2],[3,4]],[[5,6],[7,8]]])
+array
+# Array [[[1, 2], [3, 4]], [[5, 6], [7, 8]]] of shape (2, 2, 2)
 ```
 
-`data`
-Returns array data as a list
-```
+`data`: Returns array data as a list
+```python
 array.data
-# [[[1,2],[3,4]],[[5,6],[7,8]]]
+# [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
 ```
 
-`shape`
-Returns lengths of array dimensions
-```
+`shape`: Returns lengths of array dimensions. Uses a recursive implementation to calculate the array shape
+```python
 array.shape
-# (2,2,2)
+# (2, 2, 2)
 ```
 
 ### Matrix
 
-Matrix data structure; inherited from Array class
-```
+Matrix data structure; inherited from `Array` class
+```python
 matrix = Matrix([[1,2],[3,4]])
+matrix
+# Matrix [[1, 2], [3, 4]] of shape (2, 2)
 ```
 
-`is_square()`
-Returns whether the matrix shape is square
-```
+`is_square()`: Returns whether the matrix shape is square
+```python
 matrix.is_square()
 # True
 ```
 
-`determinant()`
-Returns the matrix determinant. Uses a Laplace expansion to calculate the determinant
-```
+`determinant()`: Returns the matrix determinant. Uses a recursive Laplace expansion to calculate the determinant
+```python
 matrix.determinant()
-# -6
+# -2
 ```
 
 ### Vector
 
-Vector data structure; inherited from Array class
+Vector data structure; inherited from `Array` class
 
 ## Backlog
 
