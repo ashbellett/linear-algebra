@@ -6,6 +6,7 @@ Example:
 """
 
 from __future__ import annotations
+import math
 from typing import Union
 
 from linear_algebra.array import Array
@@ -68,3 +69,12 @@ class Matrix(Array):
         """Calculate the transpose of a matrix"""
         transpose = [list(row) for row in zip(*self.data)]
         return Matrix(transpose)
+
+    def norm(self) -> float:
+        """Calculate the Frobenius norm of a matrix"""
+        norm = 0
+        for row in range(self.shape[0]):
+            for column in range(self.shape[1]):
+                norm += pow(self.data[row][column], 2)
+        norm = math.sqrt(norm)
+        return norm

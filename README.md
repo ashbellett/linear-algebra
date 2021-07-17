@@ -56,6 +56,12 @@ matrix.transpose()
 # Matrix [[1, 3], [2, 4]] of shape (2, 2)
 ```
 
+`norm()`: Returns the Frobenius norm of the matrix
+```python
+matrix.norm()
+# 5.477225575051661
+```
+
 ### Vector
 
 Vector data structure; inherited from `Array` class
@@ -70,7 +76,6 @@ vector
 ## Backlog
 
 ### Matrix Properties
-- Transpose
 - Norm
 - Rank
 - Trace
