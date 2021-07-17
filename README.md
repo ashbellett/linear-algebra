@@ -13,7 +13,7 @@ array
 # Array [[[1, 2], [3, 4]], [[5, 6], [7, 8]]] of shape (2, 2, 2)
 ```
 
-`data`: Returns array data as a list
+`data`: Returns array data as a nested list
 ```python
 array.data
 # [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
