@@ -94,10 +94,18 @@ vector
 - Nullspace
 - Definiteness
 
-### Products
+### Vector Properties
+- Magnitude
+- Angle
+- Unit vector
+
+### Matrix Products
+- Kronecker product
+
+### Vector Products
 - Vector inner product
 - Vector outer product
-- Kronecker product
+- Vector cross product
 
 ### Decompositions
 - LU decomposition
@@ -110,6 +118,7 @@ vector
 - Singular value decomposition
 
 ### Transformations
+- Diagonalisation
 - Gram-Schmidt orthogonalisation
-- Matrix projection
+- Projections
 - Matrix inverses
