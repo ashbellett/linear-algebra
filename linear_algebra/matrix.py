@@ -13,7 +13,7 @@ from linear_algebra.array import Array
 
 
 NumericType = Union[complex, float]
-MatrixType = list[NumericType]
+MatrixType = list[list[NumericType]]
 
 
 class Matrix(Array):
@@ -41,10 +41,7 @@ class Matrix(Array):
 
     def is_square(self) -> bool:
         """Check whether a matrix shape is square"""
-        if self.shape[0] == self.shape[1]:
-            result = True
-        else:
-            result = False
+        result = self.shape[0] == self.shape[1]
         return result
 
     def determinant(self) -> NumericType:
@@ -58,9 +55,13 @@ class Matrix(Array):
             raise ValueError("Matrix is not square")
         if len(matrix) == 1:
             return matrix[0][0]
-        determinant = 0
+        determinant = 0.0
         for column, element in enumerate(matrix[0]):
-            minor = [sub_matrix[:column] + sub_matrix[column + 1:] for sub_matrix in matrix[1:]]
+            minor = [
+                sub_matrix[:column] + sub_matrix[column + 1:]
+                for sub_matrix
+                in matrix[1:]
+            ]
             sign = 1 if column % 2 == 0 else -1
             determinant += sign * element * self._determinant(minor)
         return determinant
@@ -69,20 +70,19 @@ class Matrix(Array):
         """Calculate the trace of a matrix"""
         if not self.is_square():
             raise ValueError("Matrix is not square")
-        trace = 0
+        trace = 0.0
         for diagonal in range(self.shape[0]):
             trace += self.data[diagonal][diagonal]
         return trace
 
-
-    def transpose(self) -> MatrixType:
+    def transpose(self) -> Matrix:
         """Calculate the transpose of a matrix"""
         transpose = [list(row) for row in zip(*self.data)]
         return Matrix(transpose)
 
     def norm(self) -> NumericType:
         """Calculate the Frobenius norm of a matrix"""
-        norm = 0
+        norm = 0.0
         for row in range(self.shape[0]):
             for column in range(self.shape[1]):
                 norm += pow(self.data[row][column], 2)
