@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from linear_algebra.matrix import Matrix
-from tests.data import (
+from tests.data.matrix import (
     matrix_data,
     matrix_shape
 )

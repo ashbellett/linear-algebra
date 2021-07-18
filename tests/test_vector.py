@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from linear_algebra.vector import Vector
-from tests.data import (
+from tests.data.vector import (
     vector_data,
     vector_shape
 )

@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from linear_algebra.array import Array
-from tests.data import (
+from tests.data.tensor import (
     tensor_data,
     tensor_shape
 )
