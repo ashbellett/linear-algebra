@@ -88,3 +88,17 @@ class Matrix(Array):
                 norm += pow(self.data[row][column], 2)
         norm = math.sqrt(norm)
         return norm
+
+    def multiply(self, other: Matrix) -> Matrix:
+        """Calculate the product of two matrices"""
+        if self.shape[1] != other.shape[0]:
+            raise ValueError("Matrix dimensions are incompatible")
+        product = [
+            [sum(
+                left_element*right_element
+                for left_element, right_element
+                in zip(left_row, right_column)
+            ) for right_column in zip(*other.data)]
+            for left_row in self.data
+        ]
+        return Matrix(product)

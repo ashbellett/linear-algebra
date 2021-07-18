@@ -68,6 +68,12 @@ matrix.norm()
 # 5.477225575051661
 ```
 
+`multiply()`: Returns the product of two matrices
+```python
+matrix.multiply(matrix)
+# Matrix [[7, 10], [15, 22]] of shape (2, 2)
+```
+
 ### Vector
 
 Vector data structure; inherited from `Array` class
@@ -89,9 +95,8 @@ vector
 - Definiteness
 
 ### Products
-- Inner product
-- Outer product
-- Matrix product
+- Vector inner product
+- Vector outer product
 - Kronecker product
 
 ### Decompositions
