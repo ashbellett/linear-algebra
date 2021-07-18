@@ -1,13 +1,10 @@
 from unittest import TestCase
 
 from linear_algebra.vector import Vector
-from tests.data.vector import (
-    vector_data,
-    vector_shape
-)
+from tests.data.vector import vector_data, vector_shape
+
 
 class TestVector(TestCase):
-
     def setUp(self) -> None:
         self.vector = Vector(vector_data)
 

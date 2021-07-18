@@ -17,7 +17,7 @@ MatrixType = list[list[NumericType]]
 
 
 class Matrix(Array):
-    '''Matrix data structure'''
+    """Matrix data structure"""
 
     def __init__(self, data: MatrixType):
         super().__init__(data)
@@ -59,8 +59,7 @@ class Matrix(Array):
         for column, element in enumerate(matrix[0]):
             minor = [
                 sub_matrix[:column] + sub_matrix[column + 1:]
-                for sub_matrix
-                in matrix[1:]
+                for sub_matrix in matrix[1:]
             ]
             sign = 1 if column % 2 == 0 else -1
             determinant += sign * element * self._determinant(minor)
@@ -94,11 +93,14 @@ class Matrix(Array):
         if self.shape[1] != other.shape[0]:
             raise ValueError("Matrix dimensions are incompatible")
         product = [
-            [sum(
-                left_element*right_element
-                for left_element, right_element
-                in zip(left_row, right_column)
-            ) for right_column in zip(*other.data)]
+            [
+                sum(
+                    left_element * right_element
+                    for left_element, right_element
+                    in zip(left_row, right_column)
+                )
+                for right_column in zip(*other.data)
+            ]
             for left_row in self.data
         ]
         return Matrix(product)

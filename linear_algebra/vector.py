@@ -16,7 +16,7 @@ VectorType = list[NumericType]
 
 
 class Vector(Array):
-    '''Vector data structure'''
+    """Vector data structure"""
 
     def __init__(self, data: VectorType):
         super().__init__(data)
