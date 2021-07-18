@@ -44,6 +44,18 @@ class Matrix(Array):
         result = self.shape[0] == self.shape[1]
         return result
 
+    def is_identity(self) -> bool:
+        """Check whether a matrix is an identity matrix"""
+        if not self.is_square():
+            raise ValueError("Matrix is not square")
+        for row in range(self.shape[0]):
+            for column in range(self.shape[1]):
+                if (row == column) and self.data[row][column] != 1:
+                    return False
+                if (row != column) and self.data[row][column] != 0:
+                    return False
+        return True
+
     def determinant(self) -> NumericType:
         """Calculate the determinant of a matrix"""
         result = self._determinant(self.data)
@@ -79,6 +91,11 @@ class Matrix(Array):
         transpose = [list(row) for row in zip(*self.data)]
         return Matrix(transpose)
 
+    def is_symmetric(self) -> bool:
+        """Check whether a matrix is orthogonal"""
+        result = self.data == self.transpose().data
+        return result
+
     def norm(self) -> NumericType:
         """Calculate the Frobenius norm of a matrix"""
         norm = 0.0
@@ -104,3 +121,10 @@ class Matrix(Array):
             for left_row in self.data
         ]
         return Matrix(product)
+
+    def is_orthogonal(self) -> bool:
+        """Check whether a matrix is orthogonal"""
+        transpose = self.transpose()
+        product = self.multiply(transpose)
+        result = product.is_identity()
+        return result

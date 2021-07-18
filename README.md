@@ -44,6 +44,12 @@ matrix.is_square()
 # True
 ```
 
+`is_identity()`: Returns whether the matrix is an identity matrix
+```python
+matrix.is_identity()
+# False
+```
+
 `determinant()`: Returns the matrix determinant. Uses a recursive Laplace expansion to calculate the determinant
 ```python
 matrix.determinant()
@@ -62,6 +68,12 @@ matrix.transpose()
 # Matrix [[1, 3], [2, 4]] of shape (2, 2)
 ```
 
+`is_symmetric()`: Returns whether the matrix is symmetric
+```python
+matrix.is_symmetric()
+# False
+```
+
 `norm()`: Returns the Frobenius norm of the matrix
 ```python
 matrix.norm()
@@ -72,6 +84,12 @@ matrix.norm()
 ```python
 matrix.multiply(matrix)
 # Matrix [[7, 10], [15, 22]] of shape (2, 2)
+```
+
+`is_orthogonal()`: Returns whether the matrix is orthogonal
+```python
+matrix.is_orthogonal()
+# False
 ```
 
 ### Vector
