@@ -50,6 +50,12 @@ matrix.determinant()
 # -2
 ```
 
+`trace()`: Returns the matrix trace
+```python
+matrix.trace()
+# 5
+```
+
 `transpose()`: Returns the matrix transpose
 ```python
 matrix.transpose()
@@ -76,9 +82,7 @@ vector
 ## Backlog
 
 ### Matrix Properties
-- Norm
 - Rank
-- Trace
 - Rowspace
 - Columnspace
 - Nullspace
@@ -87,7 +91,7 @@ vector
 ### Products
 - Inner product
 - Outer product
-- Matrix multiplication
+- Matrix product
 - Kronecker product
 
 ### Decompositions

@@ -12,7 +12,7 @@ from typing import Union
 from linear_algebra.array import Array
 
 
-NumericType = Union[complex, float, int]
+NumericType = Union[complex, float]
 MatrixType = list[NumericType]
 
 
@@ -47,12 +47,12 @@ class Matrix(Array):
             result = False
         return result
 
-    def determinant(self) -> float:
+    def determinant(self) -> NumericType:
         """Calculate the determinant of a matrix"""
         result = self._determinant(self.data)
         return result
 
-    def _determinant(self, matrix: MatrixType) -> float:
+    def _determinant(self, matrix: MatrixType) -> NumericType:
         """Perform Laplace expansion to calculate the matrix determinant"""
         if not self.is_square():
             raise ValueError("Matrix is not square")
@@ -65,12 +65,22 @@ class Matrix(Array):
             determinant += sign * element * self._determinant(minor)
         return determinant
 
+    def trace(self) -> NumericType:
+        """Calculate the trace of a matrix"""
+        if not self.is_square():
+            raise ValueError("Matrix is not square")
+        trace = 0
+        for diagonal in range(self.shape[0]):
+            trace += self.data[diagonal][diagonal]
+        return trace
+
+
     def transpose(self) -> MatrixType:
         """Calculate the transpose of a matrix"""
         transpose = [list(row) for row in zip(*self.data)]
         return Matrix(transpose)
 
-    def norm(self) -> float:
+    def norm(self) -> NumericType:
         """Calculate the Frobenius norm of a matrix"""
         norm = 0
         for row in range(self.shape[0]):

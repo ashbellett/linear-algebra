@@ -10,7 +10,7 @@ from __future__ import annotations
 from typing import Union
 
 
-NumericType = Union[complex, float, int]
+NumericType = Union[complex, float]
 ArrayType = Union[list[NumericType], NumericType]
 
 

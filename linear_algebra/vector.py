@@ -11,7 +11,7 @@ from typing import Union
 from linear_algebra.array import Array
 
 
-NumericType = Union[complex, float, int]
+NumericType = Union[complex, float]
 VectorType = list[NumericType]
 
 
