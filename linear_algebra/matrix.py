@@ -125,3 +125,15 @@ class Matrix(Array):
         product = self.multiply(transpose)
         result = product.is_identity()
         return result
+
+    def kronecker(self, other: Matrix) -> Matrix:
+        """Calculate the Kronecker product of two matrices"""
+        result = [
+            [
+                left_element * right_element for left_element in left_row
+                for right_element in other.data[right_row]
+            ]
+            for left_row in self.data
+            for right_row in range(len(other.data))
+        ]
+        return Matrix(result)

@@ -12,7 +12,8 @@ from tests.data.matrix import (
     matrix_symmetric,
     matrix_norm,
     matrix_product,
-    matrix_orthogonal
+    matrix_orthogonal,
+    matrix_kronecker
 )
 
 
@@ -64,3 +65,9 @@ class TestMatrix(TestCase):
 
     def test_is_orthogonal(self):
         self.assertTrue(self.orthogonal.is_orthogonal())
+
+    def test_kronecker(self):
+        self.assertEqual(
+            self.matrix.kronecker(self.matrix).data,
+            matrix_kronecker
+        )

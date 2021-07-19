@@ -92,6 +92,12 @@ matrix.is_orthogonal()
 # False
 ```
 
+`kronecker()`: Returns the Kronecker product of two matrices
+```python
+matrix.kronecker(matrix)
+# Matrix [[1, 2, 2, 4], [3, 4, 6, 8], [3, 6, 4, 8], [9, 12, 12, 16]] of shape (4, 4)
+```
+
 ### Vector
 
 Vector data structure; inherited from `Array` class
@@ -105,20 +111,10 @@ vector
 
 ## Backlog
 
-### Matrix Properties
-- Rank
-- Rowspace
-- Columnspace
-- Nullspace
-- Definiteness
-
 ### Vector Properties
 - Magnitude
 - Angle
 - Unit vector
-
-### Matrix Products
-- Kronecker product
 
 ### Vector Products
 - Vector inner product
@@ -134,6 +130,13 @@ vector
 - Jordan decomposition
 - Schur decomposition
 - Singular value decomposition
+
+### Matrix Properties
+- Rank
+- Rowspace
+- Columnspace
+- Nullspace
+- Definiteness
 
 ### Transformations
 - Diagonalisation
