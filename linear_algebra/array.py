@@ -65,7 +65,7 @@ class Array:
         return Array(result)
 
     def _add(self, array: ArrayType, other: ArrayType) -> ArrayType:
-        """Adds the elements of two arrays"""
+        """Add the elements of two arrays"""
         if isinstance(array, list):
             results = []
             for array_item, other_item in zip(array, other):
@@ -80,7 +80,7 @@ class Array:
         return results
 
     def _sub(self, array: ArrayType, other: ArrayType) -> ArrayType:
-        """Subtracts the elements of two arrays"""
+        """Subtract the elements of two arrays"""
         if isinstance(array, list):
             results = []
             for array_item, other_item in zip(array, other):
@@ -95,7 +95,7 @@ class Array:
         return results
 
     def _valid_shape(self, data: ArrayType) -> bool:
-        """Checks whether an array has a valid shape"""
+        """Check whether an array has a valid shape"""
         if isinstance(data, list):
             prior_length = None
             for item in data:
@@ -113,7 +113,7 @@ class Array:
         return True
 
     def _shape(self, data: ArrayType, shape: list[int]) -> tuple[int, ...]:
-        """Gets the shape of the array"""
+        """Get the shape of an array"""
         if isinstance(data, list):
             outer_length = len(data)
             shape.append(outer_length)

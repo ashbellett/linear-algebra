@@ -33,14 +33,11 @@ class Matrix(Array):
 
     def _valid_matrix_shape(self) -> bool:
         """Check whether a matrix has a valid shape"""
-        if len(self.shape) != 2:
-            valid = False
-        else:
-            valid = True
+        valid = len(self.shape) == 2
         return valid
 
     def is_square(self) -> bool:
-        """Check whether a matrix shape is square"""
+        """Check whether a matrix is square"""
         result = self.shape[0] == self.shape[1]
         return result
 
@@ -92,7 +89,7 @@ class Matrix(Array):
         return Matrix(transpose)
 
     def is_symmetric(self) -> bool:
-        """Check whether a matrix is orthogonal"""
+        """Check whether a matrix is symmetric"""
         result = self.data == self.transpose().data
         return result
 
