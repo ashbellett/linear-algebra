@@ -11,7 +11,12 @@ from typing import Union
 
 
 NumericType = Union[complex, float]
-ArrayType = Union[list[NumericType], NumericType]
+ArrayType = Union[
+    list[list[list[NumericType]]], # 3D tensor
+    list[list[NumericType]], # matrix
+    list[NumericType], # vector
+    NumericType # scalar
+]
 
 
 class Array:
