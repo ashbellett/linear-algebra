@@ -122,13 +122,12 @@ vector
 - Vector cross product
 
 ### Decompositions
-- LU decomposition
-- Rank factorisation
+- Gaussian-Jordan elimination (including rank factorisation)
+- LUP decomposition
 - Cholesky decomposition
-- QR decomposition
-- Eigendecomposition
-- Jordan decomposition
-- Schur decomposition
+- QR decomposition (using Gram-Schmidt orthogonalisation or Householder reflections)
+- Eigendecomposition (using power method)
+- Schur decomposition (using QR algorithm)
 - Singular value decomposition
 
 ### Matrix Properties
@@ -139,7 +138,5 @@ vector
 - Definiteness
 
 ### Transformations
-- Diagonalisation
-- Gram-Schmidt orthogonalisation
 - Projections
-- Matrix inverses
+- Matrix inverse and Moore-Penrose pseudoinverse
